@@ -49,6 +49,21 @@ def handle_responses(text: str) -> str:
     if "mmdreza" in processt:
         return "91020267203"
 
+    if "محسن" in processt:
+        return "سلام محسن کونی"
+
+    if "مجتبی" in processt:
+        return "سلام مجتبی گوزو"
+
+    if "این جیه؟" in processt:
+        return "به تو جه کونی من چیم ؟؟؟؟"
+
+    if "این چیه" in processt:
+        return "به توچه من چیم کونی خان؟"
+
+    if "سلام" in processt:
+        return "اسمت چیه کونی؟"
+
     return "I don't undrestand what you wrote..."
 
 
@@ -58,16 +73,16 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     print(f'User({update.message.chat.id}) in {message_type}:"{text}"')
 
-    if message_type == "group":
-        if BOT_USERNAME in text:
-            new_text: str = text.replace(BOT_USERNAME, " ").strip()
-            response: str = handle_responses(new_text)
+    # if message_type == "group":
+    #     if BOT_USERNAME in text:
+    #         new_text: str = text.replace(BOT_USERNAME, " ").strip()
+    #         response: str = handle_responses(new_text)
 
-        else:
-            return
+    #     else:
+    #         return
 
-    else:
-        response: str = handle_responses(text)
+    # else:
+    response: str = handle_responses(text)
 
     print("Bot", response)
 
