@@ -38,7 +38,7 @@ def handle_responses(text: str) -> str:
         return "Hey there!"
 
     if "hi" in processt:
-        return "Hey there"
+        return "Hey !!!"
 
     if "how are you" in processt:
         return "I'm good!"
